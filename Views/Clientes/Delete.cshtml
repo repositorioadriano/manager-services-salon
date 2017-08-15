@@ -1,0 +1,128 @@
+@model ManagerSalon.Models.Cliente
+
+@{
+    Layout = "_Layout";
+}
+
+<h5>Excluir Cliente<i class="material-icons left">list</i></h5>
+<hr>
+<div class="row">
+    <div class="col s12 m12">
+         <blockquote class="red-text text-darken-2">
+             @ViewData["success_message"]
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </blockquote>
+        <div class="card-panel white z-depth-3">
+        <form asp-controller="Clientes" asp-action="Delete" method="post" role="form">
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input asp-for="Nome" disabled placeholder="Nome" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">credit_card</i>
+                            <input asp-for="Cpf" disabled placeholder="CPF"/>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">credit_card</i>
+                            <input asp-for="Rg" disabled placeholder="RG" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <input asp-for="Email" disabled placeholder="E-mail"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">today</i>
+                            <input asp-for="DataNascimento" disabled placeholder="Data Nascimento" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">phone</i>
+                            <input asp-for="Telefone" disabled placeholder="Telefone"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">contact_phone</i>
+                            <input asp-for="Celular" disabled placeholder="Celular" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Rua" disabled placeholder="Rua"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Numero" disabled placeholder="N°" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Complemento" disabled placeholder="Complmento"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Cep" disabled placeholder="CEP" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Bairro" disabled placeholder="Bairro"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Cidade" disabled placeholder="Cidade" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Estado" disabled placeholder="UF"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fixed-action-btn horizontal click-to-toggle">
+                    <button type="submit" asp-controller="Clientes" asp-action="Delete" onclick="return confirm('Deseja Realmente Excluir Cliente');" class="btn-floating btn-large red">
+                        <i class="material-icons">done</i>
+                    </button>
+                </div> 
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+

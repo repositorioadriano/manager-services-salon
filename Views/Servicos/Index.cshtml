@@ -1,0 +1,44 @@
+@model IEnumerable<ManagerSalon.Models.Servico>
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Serviço";
+}
+
+    <blockquote id="message-alert" class="red-text text-darken-2">
+        @if (TempData["Message"] != null)
+        {
+            @TempData["Message"]
+        }
+    </blockquote>
+    <h5>Lista de Serviços<i class="material-icons left">list</i></h5>
+    <hr>
+    <table class="striped responsive-table">
+        <thead>
+            <tr>
+                <th>Serviço</th>
+                <th>Cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descricao)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cliente.Nome)
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-controller="Clientes" asp-route-id="@item.Id" class="tooltipped" data-position="<bottom></bottom>" data-delay="50" data-tooltip="Detalhes"><i class="material-icons left">view_list</i></a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Editar"><i class="material-icons left">mode_edit</i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Excluir"><i class="material-icons left">delete</i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+  </div>
+</div>
+

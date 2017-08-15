@@ -1,0 +1,31 @@
+@{
+    Layout = "_Layout";
+}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Conteúdo</th>
+      <th>Data Publicação</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach(var post in Model.Post)
+  {
+    <tr>
+      <td>@post.Titulo</td>
+      <td>@post.Conteudo</td>
+      <td></td>
+    </tr>
+  </tbody>
+  }
+</table>
+

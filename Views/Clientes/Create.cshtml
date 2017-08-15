@@ -1,0 +1,127 @@
+@model ManagerSalon.Models.Cliente
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Novo Cliente";
+}
+<h5>Formulário de Cadastro de Cliente<i class="material-icons left">assignment</i></h5>
+<hr>
+
+<div class="row">
+    <div class="col s12 m4 l12">
+         <blockquote class="red-text text-darken-2">
+             @ViewData["success_message"]
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </blockquote>
+        <div class="card-panel white z-depth-3">
+        <form asp-controller="Clientes" asp-action="Create" method="post" class="form-horizontal" role="form">
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input asp-for="Nome" placeholder="Nome" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">credit_card</i>
+                            <input asp-for="Cpf" placeholder="CPF"/>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">credit_card</i>
+                            <input asp-for="Rg" placeholder="RG" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <input asp-for="Email" placeholder="E-mail"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">today</i>
+                            <input asp-for="DataNascimento" placeholder="Data Nascimento" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">phone</i>
+                            <input asp-for="Telefone" data-inputmask="'mask': '99-9999999'" placeholder="Telefone"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">contact_phone</i>
+                            <input asp-for="Celular" placeholder="Celular" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Rua" placeholder="Rua"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Numero" placeholder="N°" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Complemento" placeholder="Complmento"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Cep" placeholder="CEP" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Bairro" placeholder="Bairro"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Cidade" placeholder="Cidade" />
+                        </div>
+                    </div>
+                    <div class="grid-example col s12 m6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">location_on</i>
+                            <input asp-for="Estado" placeholder="UF"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fixed-action-btn horizontal click-to-toggle">
+                    <button type="submit" asp-controller="Cliente" asp-action="Create" class="btn-floating btn-large red">
+                        <i class="material-icons">done</i>
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
